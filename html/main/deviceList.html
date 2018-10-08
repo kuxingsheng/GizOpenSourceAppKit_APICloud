@@ -264,7 +264,7 @@
 			if (ret) {
 				fnPopup({
 					msg : '扫码添加成功'
-				}, function() {	
+				}, function() {
 				});
 			} else {
 				fnScannerfailed();
@@ -353,8 +353,8 @@
 				}
 				gizWifiSDK.getBoundDevices({
 					uid : uid,
-					token : token
-					// specialProductKeys:
+					token : token,
+					specialProductKeys:'0ef30891b1b0440f9466637b471567da'
 				}, function(ret, err) {
 					receive_fnGetBoundDevices(ret, err);
 				});

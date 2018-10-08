@@ -6,7 +6,7 @@
           content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,initial-scale=1.0,width=device-width"/>
     <meta name="format-detection" content="telephone=no,email=no,date=no,address=no">
     <style>
-    
+
     </style>
 </head>
 <body>
@@ -26,6 +26,7 @@
 		$api.rmStorage( 'hasBack' );
 		$api.setStorage('appID', '342778f9eb0246ef99ee59de45a6f270');
 		$api.setStorage('appSecret', 'e956c333e66041718a123ad150a54f0a');
+    $api.setStorage('specialProductKeys', '0ef30891b1b0440f9466637b471567da');
 
 //		初始化机智云模块
 		gizWifiSDK.startWithAppID({
@@ -42,14 +43,14 @@
 					path: '/user',
 					slidBackEnabled: true,
 					y: 0
-				})	
+				})
 			}else{
 				fnNotes( err );
 			}
 		});
 	}
-	
-	
+
+
 //	[设备控制相关 -> 写入数据点]( http://site.gizwits.com/zh-cn/developer/product )
 	function fnWrite( obj ){
 		gizWifiDevice.write({
@@ -64,7 +65,7 @@
 			});
 		});
 	}
-	
+
 //	修改设备别名
 	function fnSetCustomInfo( obj ){
 		gizWifiDevice.setCustomInfo({
@@ -79,7 +80,7 @@
 			});
 		});
 	}
-		
+
 //	设备控制相关->获取设备状态。
 	function fnGetDeviceStatus( obj ){
 		var vSpeed = 20000,
@@ -110,7 +111,7 @@
 			}
 		});
 	}
-	
+
 //	设备搜索和绑定->把设备从云端解绑
 	function fnUnbindDevice( obj ){
 		api.getPrefs({
@@ -133,7 +134,7 @@
 			}
 		});
 	}
-	
+
 //	gizWifiSDK -> 注册 SDK 事件通知
 	function fnRegisterNotifications( obj ){
 		gizWifiSDK.registerNotifications(function(ret, err) {
@@ -144,7 +145,7 @@
 			});
 		});
 	}
-	
+
 	// 获取 SDK 版本
 	function fnGetVersion( obj ){
 		gizWifiSDK.getVersion(function(ret, err) {
@@ -155,7 +156,7 @@
 			});
 		});
 	}
-	
+
 
 //配置设备路由
 	function fnSetDeviceOnboarding( obj ){
@@ -183,7 +184,7 @@
 			}
 		});
 	}
-	
+
 //	获取手机当前Wifi的SSID
 	function fnGetPhoneSSID( obj ){
 		//alert(JSON.stringify(obj));
@@ -209,7 +210,7 @@
 	// 		});
 	// 	});
 	// }
-	
+
 //	QQ 登录
 	function fnUserLoginWithThirdAccountType( obj ){
 
@@ -227,7 +228,7 @@
 			});
 		})
 	}
-	
+
 //	匿名登录
 	function fnUserLoginAnonymous( obj ){
 		gizWifiSDK.userLoginAnonymous(function(ret, err){
@@ -238,7 +239,7 @@
 			});
 		})
 	}
-	
+
 //	重置密码
 	function fnResetPassword( obj ){
 		gizWifiSDK.resetPassword({
@@ -254,7 +255,7 @@
 			});
 		})
 	}
-		
+
 //	用户登录
 	function fnUserLogin( obj ){
 		gizWifiSDK.userLogin({
@@ -268,7 +269,7 @@
 			});
 		})
 	}
-	
+
 //	发送短信
 	function fnRequestSendVerifyCode( obj ){
 		//alert(JSON.stringify(obj));
@@ -287,7 +288,7 @@
 			});
 		});
 	}
-	
+
 //	用户注册
 	function fnRegisterUser( obj ){
 		gizWifiSDK.registerUser({
@@ -302,6 +303,6 @@
 			    script: 'receive_fnRegisterUser('+JSON.stringify( ret )+','+JSON.stringify( err )+')'
 			});
 		});
-	}	
+	}
 </script>
 </html>
