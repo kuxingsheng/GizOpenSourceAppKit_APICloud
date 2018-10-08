@@ -354,7 +354,7 @@
 				gizWifiSDK.getBoundDevices({
 					uid : uid,
 					token : token,
-					specialProductKeys:'0ef30891b1b0440f9466637b471567da'
+					specialProductKeys : $api.getStorage('specialProductKeys')
 				}, function(ret, err) {
 					receive_fnGetBoundDevices(ret, err);
 				});
